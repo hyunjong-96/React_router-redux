@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
+import {createStore} from 'redux'
+import rootReducer from './modules'
+
+const store = createStore(rootReducer)
+console.log('rootReducer의 상태값!: ',store.getState())
 
 ReactDOM.render(
   <BrowserRouter>
