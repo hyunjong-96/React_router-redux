@@ -6,6 +6,7 @@ import Profile from './Profile'
 import Profiles from './Profiles'
 import HistorySample from './HistorySample'
 import CounterContainer from './containers/CounterContainer'
+import TodosContainer from './containers/TodosContainer'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route path="/profiles" component={Profiles}/>
       <Route path="/history" component={HistorySample}/>
       <Route path="/counter" component={CounterContainer}/>
+      <Route path="/todo" component={TodosContainer}/>
       <Route
       //path를 따로 정의하지 않으면 모든 상황에 렌더링됨.
         render={({location})=>(
