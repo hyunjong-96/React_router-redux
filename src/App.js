@@ -7,6 +7,7 @@ import Profiles from './Profiles'
 import HistorySample from './HistorySample'
 import CounterContainer from './containers/CounterContainer'
 import TodosContainer from './containers/TodosContainer'
+import Counter_middleware from './containers/CounterContainer_middleware'
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
       </ul>
       <hr/>
       <Switch>
-      <Route path="/" exact={true} component={Home}/>
+      <Route path="/" exact={true} component={Counter_middleware}/>
       <Route path="/about" exact={true} component={About}/>
       <Route path="/profiles" component={Profiles}/>
       <Route path="/history" component={HistorySample}/>
