@@ -11,15 +11,19 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import myLogger from './middlewares/myLogger'
 import logger from 'redux-logger'
 import ReduxThunk from 'redux-thunk'
+import {Router} from 'react-router-dom'
+import {createBrowserHistory} from 'history'
 
-const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(ReduxThunk,logger)))
+const customHistory = createBrowserHistory()
+
+const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(ReduxThunk.withExtraArgument({history:customHistory}),logger)))
 console.log('rootReducer의 상태값!: ',store.getState())
 
 ReactDOM.render(
+  <Router history={customHistory}>
   <Provider store={store}>
-  <BrowserRouter>
     <App />
-    </BrowserRouter></Provider>,
+    </Provider></Router>,
   document.getElementById('root')
 );
 
