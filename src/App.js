@@ -8,7 +8,9 @@ import HistorySample from './HistorySample'
 import CounterContainer from './containers/CounterContainer'
 import TodosContainer from './containers/TodosContainer'
 import Counter_middleware from './containers/CounterContainer_middleware'
-
+import PostsContainer from './containers/PostListContainer'
+import PostListPage from './pages/PostListPage'
+import PostPage from './pages/PostPage'
 function App() {
   return (
     <div>
@@ -29,6 +31,8 @@ function App() {
       <hr/>
       <Switch>
       <Route path="/" exact={true} component={Counter_middleware}/>
+      <Route path="/post" exact={true} component={PostListPage}/>
+      <Route path="/post/:id" component={PostPage}/>
       <Route path="/about" exact={true} component={About}/>
       <Route path="/profiles" component={Profiles}/>
       <Route path="/history" component={HistorySample}/>

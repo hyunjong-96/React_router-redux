@@ -10,8 +10,9 @@ import {Provider} from 'react-redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import myLogger from './middlewares/myLogger'
 import logger from 'redux-logger'
+import ReduxThunk from 'redux-thunk'
 
-const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(logger)))
+const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(ReduxThunk,logger)))
 console.log('rootReducer의 상태값!: ',store.getState())
 
 ReactDOM.render(
